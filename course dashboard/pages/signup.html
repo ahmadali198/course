@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Pages</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <!-- Login Page -->
+    <div class="auth-container" id="login-page">
+        <h2>Login</h2>
+        <form action="#" method="post">
+            <div class="input-group">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="auth-btn">Login</button>
+            <p class="switch-auth">Don't have an account? <a href="#" onclick="showPage('register-page')">Register here</a></p>
+            <p class="switch-auth"><a href="#" onclick="showPage('password-recovery-page')">Forgot your password?</a></p>
+        </form>
+    </div>
+
+    <!-- Registration Page -->
+    <div class="auth-container" id="register-page" style="display:none;">
+        <h2>Register</h2>
+        <form action="#" method="post">
+            <div class="input-group">
+                <label for="register-name">Full Name</label>
+                <input type="text" id="register-name" placeholder="Enter your full name" required>
+            </div>
+            <div class="input-group">
+                <label for="register-email">Email</label>
+                <input type="email" id="register-email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label for="register-password">Password</label>
+                <input type="password" id="register-password" placeholder="Create a password" required>
+            </div>
+            <button type="submit" class="auth-btn">Register</button>
+            <p class="switch-auth">Already have an account? <a href="login.html" onclick="showPage('login-page')">Login here</a></p>
+        </form>
+    </div>
+
+    <!-- Password Recovery Page -->
+    <div class="auth-container" id="password-recovery-page" style="display:none;">
+        <h2>Password Recovery</h2>
+        <form action="#" method="post">
+            <div class="input-group">
+                <label for="recovery-email">Email</label>
+                <input type="email" id="recovery-email" placeholder="Enter your email" required>
+            </div>
+            <button type="submit" class="auth-btn">Recover Password</button>
+            <p class="switch-auth"><a href="#" onclick="showPage('login-page')">Back to Login</a></p>
+        </form>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.getElementById('login-page').style.display = 'none';
+            document.getElementById('register-page').style.display = 'none';
+            document.getElementById('password-recovery-page').style.display = 'none';
+            document.getElementById(pageId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="../style.css"> 
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <h1>My Dashboard</h1>
+
+        <!-- My Courses Section -->
+        <section class="my-courses">
+            <h2>My Courses</h2>
+            <div class="course-card">
+                <h3>Web Development Masterclass</h3>
+                <p>Progress: 75%</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 75%;"></div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <h3>AI & Machine Learning</h3>
+                <p>Progress: 40%</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 40%;"></div>
+                </div>
+            </div>
+
+            <div class="course-card">
+              <h3>Social media marketing</h3>
+              <p>Progress: 40%</p>
+              <div class="progress-bar">
+                  <div class="progress" style="width: 40%;"></div>
+              </div>
+          </div>
+
+          <div class="course-card">
+            <h3>graphics designing</h3>
+            <p>Progress: 40%</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 40%;"></div>
+            </div>
+        </div>
+
+        <div class="course-card">
+          <h3>Cloud computing</h3>
+          <p>Progress: 40%</p>
+          <div class="progress-bar">
+              <div class="progress" style="width: 40%;"></div>
+          </div>
+      </div>
+
+      <div class="course-card">
+        <h3>Data science</h3>
+        <p>Progress: 40%</p>
+        <div class="progress-bar">
+            <div class="progress" style="width: 40%;"></div>
+        </div>
+    </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section class="profile">
+          <h2>Profile</h2>
+          <div class="profile-info">
+              <p><strong>Name:</strong> <span id="name">John Doe</span></p>
+              <p><strong>Email:</strong> <span id="email">john.doe@example.com</span></p>
+              <p><strong>Member Since:</strong> <span id="member-since">January 2024</span></p>
+              <button class="edit-profile-btn" onclick="enableEdit()">Edit Profile</button>
+              <button class="save-profile-btn" onclick="saveProfile()" style="display:none;">Save Profile</button>
+          </div>
+      </section>
+      
+    </div>
+
+    <script>
+
+    function enableEdit() {
+      // Get profile information elements
+      const nameElement = document.getElementById('name');
+      const emailElement = document.getElementById('email');
+      
+      // Make the text content editable
+      nameElement.setAttribute('contenteditable', 'true');
+      emailElement.setAttribute('contenteditable', 'true');
+  
+      // Change border and background to indicate edit mode
+      nameElement.style.border = '1px solid #ccc';
+      nameElement.style.backgroundColor = '#f0f0f0';
+      emailElement.style.border = '1px solid #ccc';
+      emailElement.style.backgroundColor = '#f0f0f0';
+      
+      // Show the Save button and hide the Edit button
+      document.querySelector('.edit-profile-btn').style.display = 'none';
+      document.querySelector('.save-profile-btn').style.display = 'inline-block';
+  }
+  
+  function saveProfile() {
+      // Get profile information elements
+      const nameElement = document.getElementById('name');
+      const emailElement = document.getElementById('email');
+  
+      // Disable editing
+      nameElement.setAttribute('contenteditable', 'false');
+      emailElement.setAttribute('contenteditable', 'false');
+  
+      // Remove border and background from the editable fields
+      nameElement.style.border = 'none';
+      nameElement.style.backgroundColor = 'transparent';
+      emailElement.style.border = 'none';
+      emailElement.style.backgroundColor = 'transparent';
+      
+      // Show the Edit button and hide the Save button
+      document.querySelector('.edit-profile-btn').style.display = 'inline-block';
+      document.querySelector('.save-profile-btn').style.display = 'none';
+  
+      // Here you can add additional code to save the changes, such as sending the data to the server
+      alert('Profile information saved!');
+  }
+  
+</script>
+</body>
+</html>

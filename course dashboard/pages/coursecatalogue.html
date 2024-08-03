@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../style.css"> 
+</head>
+<body>
+  <input type="text" id="course-search" placeholder="Search for courses..." onkeyup="searchCourses()">
+
+  <div class="filters">
+    <select id="category-filter mb-8 text-center">
+      <option value="all">All Categories</option>
+      <option value="web-development">Web Development</option>
+      <option value="ML">Machine learning</option>
+      <option value="data-science">Social media marketing</option>
+      <option value="data-science">Graphic designing</option>
+      <option value="data-science">Data Science</option>
+      <option value="cloud-computing">Cloud computing</option>
+    </select>
+
+    <select id="difficulty-filter">
+      <option value="all">All Levels</option>
+      <option value="beginner">Beginner</option>
+      <option value="intermediate">Intermediate</option>
+      <option value="advanced">Advanced</option>
+    </select>
+
+    <select id="rating-filter">
+      <option value="all">All Ratings</option>
+      <option value="4">4 Stars & Above</option>
+      <option value="3">3 Stars & Above</option>
+      <option value="2">2 Stars & Above</option>
+      <option value="1">1 Star & Above</option>
+    </select>
+  </div>
+
+  <section class="featured-courses">
+    <div class="container">
+      <h2>Featured Courses</h2>
+      <div class="course-grid">
+        <div class="course-card" data-title="web development">
+          <img src="../images/image 1.webp" alt="Web Development">
+          <h3>Web Development</h3>
+          <p>Learn HTML, CSS, JavaScript, and modern frameworks.</p>
+          <a href="web course -details.html" class="btn-course">Learn More</a>
+        </div>
+        <div class="course-card" data-title="ai machine learning">
+          <img src="../images/image 2.jfif" alt="AI & Machine Learning">
+          <h3>AI & Machine Learning</h3>
+          <p>Understand AI concepts, neural networks, and ML algorithms.</p>
+          <a href="Ai.html" class="btn-course">Learn More</a>
+        </div>
+        <div class="course-card" data-title="social media marketing">
+          <img src="../images/social media marketing.png" alt="social media marketing">
+          <h3>Social Media Marketing</h3>
+          <p>grow your business with modern techniques.</p>
+          <a href="social media details.html" class="btn-course">Learn More</a>
+        </div>
+        <div class="course-card" data-title="graphics designing">
+          <img src="../images/graphics designing.jpg" alt="graphics designing">
+          <h3>Graphics designing</h3>
+          <p> Make animations and posts for yout business.</p>
+          <a href="graphics.html" class="btn-course">Learn More</a>
+
+        </div>
+        <div class="course-card" data-title="cloud">
+          <img src="../images/cloud .png" alt="cloud">
+          <h3>Cloud computing</h3>
+          <p>learn about cloud computing and azure</p>
+          <a href="cloud.html" class="btn-course">Learn More</a>
+          
+        </div>
+        <div class="course-card" data-title=""Data science">
+          <img src="../images/data.png" alt="Data science">
+          <h3>Data Science</h3>
+          <p>Learn the essentials of data science, including data analysis, visualization, and machine learning</p>
+          <a href="data science.html" class="btn-course">Learn More</a>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  
+ 
+</section> 
+
+<script>
+
+function searchCourses() {
+  // Get the search query
+  const query = document.getElementById('course-search').value.toLowerCase();
+  
+  // Get all course cards
+  const courses = document.querySelectorAll('.course-card');
+  
+  // Loop through each course card
+  courses.forEach(course => {
+      // Get the title from the data-title attribute
+      const title = course.getAttribute('data-title').toLowerCase();
+      
+      // Check if the title contains the search query
+      if (title.includes(query)) {
+          // If it matches, display the course
+          course.style.display = 'block';
+      } else {
+          // If it doesn't match, hide the course
+          course.style.display = 'none';
+      }
+  });
+}
+</script>
+  
+ 
+
+</body>
+</html>
+
